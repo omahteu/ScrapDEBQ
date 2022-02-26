@@ -12,9 +12,7 @@ class Livia:
         pass
     
     def infantil(self, url):
-        
         self.url = url
-        
         url = url
 
         response = urlopen(url)
@@ -31,12 +29,11 @@ class Livia:
             precos_revistas.append(preco.get('value'))
 
         for n, p in zip(nomes_revistas, precos_revistas):
-            
             dd = {}
             dd[n] = p
             dados.append(dd)
 
-        with open('infantil.json', 'w') as json_file:
+        with open('dados/infantil.json', 'w') as json_file:
             dump(dados, json_file, indent=4 ,ensure_ascii=False)
         
         print("Arquivo Criado!")
@@ -70,7 +67,7 @@ class Livia:
             dd[n] = p
             dados.append(dd)
 
-        with open('adolescente.json', 'w') as json_file:
+        with open('dados/adolescente.json', 'w') as json_file:
             dump(dados, json_file, indent=4 ,ensure_ascii=False)
         
         print("Arquivo Criado!")
@@ -104,7 +101,7 @@ class Livia:
             dd[n] = p
             dados.append(dd)
 
-        with open('jovem.json', 'w') as json_file:
+        with open('dados/jovem.json', 'w') as json_file:
             dump(dados, json_file, indent=4 ,ensure_ascii=False)
         
         print("Arquivo Criado!")
@@ -138,7 +135,7 @@ class Livia:
             dd[n] = p
             dados.append(dd)
 
-        with open('adulto.json', 'w') as json_file:
+        with open('dados/adulto.json', 'w') as json_file:
             dump(dados, json_file, indent=4 ,ensure_ascii=False)
         
         print("Arquivo Criado!")
